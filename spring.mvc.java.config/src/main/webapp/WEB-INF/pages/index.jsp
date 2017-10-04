@@ -9,8 +9,9 @@
 </head>
 <body>
 	<div id="ENTER">
-		<div class="window">
+		<div class="form_window">
 			<form action="hello" method="post">
+				<p>Log in, please</p>
 				<p>
 					Name: <input type="text" name="name">
 				</p>
@@ -26,8 +27,9 @@
 
 	<div id="REGISTER">
 
-		<div class="window">
+		<div class="form_window">
 			<form action="register" method="post">
+				<p>Sign up:</p>
 				<p>Email address:</p>
 				<input type="text" name="email" id="Email" onkeyup="CheckRegInfo()">
 				<p>Name:</p>
@@ -37,7 +39,8 @@
 				<input type="password" id="pass1" name="password1"
 					onkeyup="CheckRegInfo()">
 				<p>Confirm your password:</p>
-				<input type="password" id="pass2" name="password2" onkeyup="CheckRegInfo()">
+				<input type="password" id="pass2" name="password2"
+					onkeyup="CheckRegInfo()">
 				<p id="RegErrors">Type all the info and log in:)</p>
 				<p>
 					<input type="submit" id="RegisterButton" value="Register" disabled />

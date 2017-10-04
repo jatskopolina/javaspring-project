@@ -1,4 +1,4 @@
-package cubearticle.examples.springmvc.dbclasses;
+package cubearticle.examples.springmvc.helpful;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -24,16 +24,19 @@ public class DBConnector {
 	}
 
 	public boolean selectall(String name, String email) throws SQLException {
+		//checkes if db includes a user with sch login or such email
 		res = stmt.executeQuery("SELECT * FROM users WHERE login = \"" + name + "\" OR email = \"" + email + "\";");
 		return res.next();
 	}
 
 	public void insert(String name, String email, String password) throws SQLException {
+		//inserts new user in database
 		stmt.executeUpdate("INSERT INTO users (login, email, password) VALUES (\"" + name + "\", \"" + email + "\", \""
 				+ password + "\");");
 	}
 
 	public String findpassword(String name) throws SQLException {
+		//returns user`s password
 		ResultSet res = stmt.executeQuery("SELECT password FROM users WHERE login = \"" + name + "\";");
 		if (res.next())
 			return res.getString(1);
