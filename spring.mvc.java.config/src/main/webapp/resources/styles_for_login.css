@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+body {
+	margin: 0;
+}
+
 #welcome {
 	float: right;
 	padding: 0px 10px;
@@ -8,13 +12,11 @@
 #ENTER, #REGISTER {
 	display: none;
 	position: absolute;
-	top: 0;
-	left: 0;
 	width: 100%;
-	height: 100%;
 }
 
 .form_window {
+	position: relative;
 	width: 300px;
 	text-align: center;
 	padding: 15px;
@@ -24,8 +26,16 @@
 	margin: auto;
 }
 
-#ENTER:target, #REGISTER:target {
-	display: block;
+.form_window img {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+.form_window img:hover, .log_button:hover {
+	cursor: pointer;
 }
 
 .log_button {

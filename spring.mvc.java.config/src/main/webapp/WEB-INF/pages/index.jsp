@@ -5,11 +5,13 @@
 <link href="<c:url value="/resources/styles_for_login.css" />"
 	rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <title>log in</title>
 </head>
 <body>
 	<div id="ENTER">
 		<div class="form_window">
+			<img src="images/close.png">
 			<form action="hello" method="post">
 				<p>Log in, please</p>
 				<p>
@@ -26,8 +28,8 @@
 	</div>
 
 	<div id="REGISTER">
-
 		<div class="form_window">
+			<img src="images/close.png">
 			<form action="register" method="post">
 				<p>Sign up:</p>
 				<p>Email address:</p>
@@ -49,8 +51,8 @@
 			</form>
 		</div>
 	</div>
-
-	<a class="log_button" href="#ENTER">Log In</a>
-	<a class="log_button" href="#REGISTER">I am a new user here!</a>
+	<div class="log_button" id="LogInButton">Log In</div>
+	<div class="log_button" id="SignUpButton">I am a new user here!</div>
+	<script type="text/javascript" src="resources/VisibilityOfWindows.js"></script>
 </body>
 </html>
