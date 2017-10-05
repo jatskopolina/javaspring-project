@@ -16,6 +16,7 @@ body {
 }
 
 .form_window {
+	background: white;
 	position: relative;
 	width: 300px;
 	text-align: center;
