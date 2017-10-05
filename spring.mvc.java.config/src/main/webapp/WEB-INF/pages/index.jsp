@@ -6,6 +6,7 @@
 	rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="resources/CheckingRegInfo.js"></script>
 <title>log in</title>
 </head>
 <body>
@@ -30,7 +31,7 @@
 	<div id="REGISTER">
 		<div class="form_window">
 			<img src="images/close.png">
-			<form action="register" method="post">
+			<form action="register" onsubmit='CheckRegInfo();' method="post">
 				<p>Sign up:</p>
 				<p>Email address:</p>
 				<input type="text" name="email" id="Email" onkeyup="CheckRegInfo()">
@@ -47,7 +48,6 @@
 				<p>
 					<input type="submit" id="RegisterButton" value="Register" disabled />
 				</p>
-				<script type="text/javascript" src="resources/CheckingRegInfo.js"></script>
 			</form>
 		</div>
 	</div>
