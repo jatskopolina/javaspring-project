@@ -1,4 +1,23 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+	if (session.getAttribute("userLogin") != null) {
+		response.sendRedirect("/");
+	}
+	if (request.getParameter("userLogin") != null && request.getParameter("userPassword") != null) {
+		session.setAttribute("userLogin", request.getParameter("userLogin"));
+		if (request.getParameter("destination") != null && !request.getParameter("destination").equals("")
+				&& !request.getParameter("destination").equals("/")) {
+			try {
+				response.sendRedirect(response
+						.encodeRedirectURL(request.getContextPath() + request.getParameter("destination")));
+			} catch (Exception e) {
+				response.sendRedirect("index.jsp");
+				return;
+			}
+		}
+		response.sendRedirect("index.jsp");
+	}
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>

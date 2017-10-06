@@ -6,7 +6,14 @@
 	metadata-complete="false">
 
 	<display-name>Spring MVC Java Config</display-name>
-
+	<filter>
+		<filter-name>Authorized</filter-name>
+		<filter-class>cubearticle.examples.springmvc.helpful.Authorized</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>Authorized</filter-name>
+		<url-pattern>/WEB-INF/pages/hello.jsp</url-pattern>
+	</filter-mapping>
 	<welcome-file-list>
 		<welcome-file>/WEB-INF/pages/index.jsp</welcome-file>
 	</welcome-file-list>
