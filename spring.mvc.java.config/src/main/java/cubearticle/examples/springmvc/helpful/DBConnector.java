@@ -19,7 +19,7 @@ public class DBConnector {
 	public DBConnector() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
 		conn = DriverManager
-				.getConnection("jdbc:mysql://localhost/test?user=root&password=1234&serverTimezone=Europe/Moscow");
+				.getConnection("jdbc:mysql://localhost/world?user=root&password=1234&serverTimezone=Europe/Moscow");
 		stmt = conn.createStatement();
 	}
 

@@ -22,8 +22,8 @@ public class RegisterController {
 		DBConnector connector = new DBConnector();
 		boolean exists = connector.selectall(name, email);
 		if (!exists) {
-			PasswordHasher ph=new PasswordHasher("MD5");
-			password1=ph.hash(password1);
+			PasswordHasher ph = new PasswordHasher("MD5");
+			password1 = ph.hash(password1);
 			connector.insert(name, email, password1);
 			model.addAttribute("name", name);
 			System.out.println("It`s ok, i have created your account");

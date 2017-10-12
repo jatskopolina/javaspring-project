@@ -15,5 +15,6 @@
 		Welcome,
 		<c:out value="${name}" />
 	</p>
+	
 </body>
 </html>
