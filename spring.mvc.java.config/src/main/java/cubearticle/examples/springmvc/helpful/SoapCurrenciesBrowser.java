@@ -17,7 +17,6 @@ public class SoapCurrenciesBrowser {
 	private ArrayList<Currency> list;
 
 	public SoapCurrenciesBrowser() {
-
 		try {
 			// Создаем соединение
 			SOAPConnectionFactory soapConnFactory = SOAPConnectionFactory.newInstance();
@@ -41,8 +40,7 @@ public class SoapCurrenciesBrowser {
 			// получение в answer строки с ответом
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
 			response.writeTo(out);
-			String answer = out.toString();// кодировку сюда нормальную! при прописанной utf-8 пустая строка
-			// в принципе можно забить на уехавшие русские символы и брать значения VEngname
+			String answer = out.toString();// кодировку сюда нормальную! при прописанной utf-8 пустая строка. русские буквы не читаются
 			System.out.println("Ok, i posted soap message and got the answer: ");
 			System.out.println(answer);
 			connection.close();
@@ -53,7 +51,6 @@ public class SoapCurrenciesBrowser {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-
 	}
 
 	public ArrayList<Currency> getresult() {

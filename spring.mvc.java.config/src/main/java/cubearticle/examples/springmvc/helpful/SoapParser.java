@@ -8,13 +8,19 @@ public class SoapParser {
 
 	SoapParser(String request) {
 		String arr[] = request.split("<EnumValutes>");
-		//the first line is empty, so lets start from the second one
+		// the first line is empty, so lets start from the second one
 		for (int i = 1; i < arr.length; i++) {
 			String tmpName = "", tmpCharCode = "", tmpNumCode = "";
 			tmpName = findValue(arr[i], "VEngname");
 			tmpCharCode = findValue(arr[i], "VcharCode");
 			tmpNumCode = findValue(arr[i], "VnumCode");
 			result.add(new Currency(tmpName, tmpCharCode, tmpNumCode));
+		}
+		for (int i = 0; i < result.size()-1; i++) {
+			if (result.get(i).Name.equals(result.get(i + 1).Name)) {
+				result.remove(i);
+				i--;
+			}
 		}
 	}
 
