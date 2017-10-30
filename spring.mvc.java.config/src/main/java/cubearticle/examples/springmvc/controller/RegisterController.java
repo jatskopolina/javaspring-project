@@ -17,8 +17,8 @@ public class RegisterController {
 
 	@RequestMapping(value = "register", method = RequestMethod.POST)
 	public String logIn(@RequestParam String email, @RequestParam String name, @RequestParam String password1,
-			Model model) throws SQLException, InstantiationException, IllegalAccessException, ClassNotFoundException,
-			NoSuchAlgorithmException {
+			boolean remember, Model model) throws SQLException, InstantiationException, IllegalAccessException,
+			ClassNotFoundException, NoSuchAlgorithmException {
 		DBConnector connector = new DBConnector();
 		boolean exists = connector.selectall(name, email);
 		if (!exists) {
@@ -26,6 +26,7 @@ public class RegisterController {
 			password1 = ph.hash(password1);
 			connector.insert(name, email, password1);
 			model.addAttribute("name", name);
+			model.addAttribute("remember",remember); //What is next?..i need automatic autorization here
 			System.out.println("It`s ok, i have created your account");
 			return "hello";
 		}

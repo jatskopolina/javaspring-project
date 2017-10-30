@@ -27,8 +27,8 @@ public class CookieUtils {
 			}
 			if (lastLoginDatetime != null) {
 				found = true;
-				out.println("Hello, we are glad to see you again!<br/>");
-				out.println("Your last Login date and time is: " + lastLoginDatetime + "<br/>");
+				out.println("Hello, we are glad to see you!<br/>");
+				out.println("Your last login date and time is: " + lastLoginDatetime + "<br/>");
 			}
 		}
 

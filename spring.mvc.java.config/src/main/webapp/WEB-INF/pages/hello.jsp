@@ -16,7 +16,10 @@
 <title>welcome</title>
 </head>
 <body>
-	<a class="log_button" style = "text-decoration: none" href="./">Log out </a>
+	<a class="log_button" style="text-decoration: none" href="./">Log
+		out </a>
+	<!-- Used Bootstrap for cute table and he decided to change the style of p. 
+	"Welcome, ..." is right on the top of the screen now. Dont wanna create another text style for it, but i am angry!-->
 	<p id="welcome">
 		Welcome,
 		<c:out value="${name}" />
@@ -26,7 +29,6 @@
 		//i couldn`t get my list of valutes here.. so i use special class))
 		SoapPrinter.print(out);
 	%>
-
 
 </body>
 </html>

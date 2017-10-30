@@ -45,6 +45,8 @@
 				<input type="password" id="pass2" name="password2"
 					onkeyup="CheckRegInfo()">
 				<p id="RegErrors">Type all the info and log in:)</p>
+				<label><input type="checkbox" name="remember" /> Remember
+					my password! </label>
 				<p>
 					<input type="submit" id="RegisterButton" value="Register" disabled />
 				</p>
