@@ -5,11 +5,13 @@
 <link href="<c:url value="/resources/styles_for_login.css" />"
 	rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<%@ page import="cubearticle.examples.springmvc.helpful.CookieUtils"%>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="resources/CheckingRegInfo.js"></script>
 <title>log in</title>
 </head>
 <body>
+	<!-- <%!//public String[] array = CookieUtils.hasIt(request);%> after it i wanna autofill the form-->
 	<div id="ENTER">
 		<div class="form_window">
 			<img src="images/close.png">
@@ -21,6 +23,8 @@
 				<p>
 					Password: <input type="password" name="password">
 				</p>
+				<!-- i need it only for avoiding exception, because hello page wants remember parameter from request-->
+				<input type="hidden" name="remember" value="false">
 				<p>
 					<input type="submit" value="Log In" />
 				</p>
@@ -45,8 +49,12 @@
 				<input type="password" id="pass2" name="password2"
 					onkeyup="CheckRegInfo()">
 				<p id="RegErrors">Type all the info and log in:)</p>
-				<label><input type="checkbox" name="remember" /> Remember
-					my password! </label>
+				<!-- The thing below i need to put "remember" in the request anyway,
+					even if the user missed the tick -->
+				<label><input type="radio" name="remember" value="true"
+					checked> Remember me!</label> <label> <input type="radio"
+					name="remember" value="false"> Don`t do it
+				</label>
 				<p>
 					<input type="submit" id="RegisterButton" value="Register" disabled />
 				</p>
