@@ -2,12 +2,15 @@ package cubearticle.examples.springmvc.controller;
 
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import cubearticle.examples.springmvc.helpful.Currency;
 import cubearticle.examples.springmvc.helpful.DBConnector;
 import cubearticle.examples.springmvc.helpful.PasswordHasher;
 
@@ -24,6 +27,10 @@ public class LogInController {
 		if (res.equals(password)) {
 			System.out.println("IT s ok, you successfully have logged in");
 			model.addAttribute("name", name);
+			ArrayList <Currency> a = new ArrayList<>();
+			Currency tmp = new Currency("Rubles", "RUB", "12e");
+			a.add(tmp);
+			model.addAttribute("list", a);
 			return "hello";
 		} else {
 			System.out.println("OH, smth wrong!");

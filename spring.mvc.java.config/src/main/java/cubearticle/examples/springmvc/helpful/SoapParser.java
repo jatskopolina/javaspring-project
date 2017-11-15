@@ -16,8 +16,8 @@ public class SoapParser {
 			tmpNumCode = findValue(arr[i], "VnumCode");
 			result.add(new Currency(tmpName, tmpCharCode, tmpNumCode));
 		}
-		for (int i = 0; i < result.size()-1; i++) {
-			if (result.get(i).Name.equals(result.get(i + 1).Name)) {
+		for (int i = 0; i < result.size() - 1; i++) {
+			if (result.get(i).getName().equals(result.get(i + 1).getName())) {
 				result.remove(i);
 				i--;
 			}

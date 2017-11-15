@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.jsp.JspWriter;
 
 public class CookieUtils {
-	//BUT I CANT USE IT THIS WAY- I HAVE NO REQUEST AT THE FIRST MOMENT!
 	public static String[] hasIt(HttpServletRequest request) throws IOException {
 		// Get an array of Cookies associated with this domain...
 		Cookie[] cookies = request.getCookies();

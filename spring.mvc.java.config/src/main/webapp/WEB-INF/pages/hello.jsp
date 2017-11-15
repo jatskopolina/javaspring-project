@@ -5,6 +5,8 @@
 
 <%@ page import="cubearticle.examples.springmvc.helpful.SoapPrinter"%>
 
+<%@ page import="cubearticle.examples.springmvc.helpful.Currency"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -35,8 +37,12 @@
 
 		//i couldn`t get my list of valutes here.. so i use special class))
 		//I comment it while do testing, but this line is ok
-		//SoapPrinter.print(out);
+		SoapPrinter.print(out);
 	%>
+	<!-- stringBuilder for string changing: when u use string it creaates new one for each modification, but strbuilder doesnt. StringBuffer for multithread (it is slow and safe) -->
+	<c:forEach var="i" items="${list}">
+	${i.name}
+	</c:forEach>
 
 </body>
 </html>

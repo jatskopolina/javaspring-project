@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configurable
 @EnableWebMvc
-@ComponentScan(basePackages = "cubearticle")
+@ComponentScan(basePackages = "cubearticle.examples.springmvc.controller")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
 	@Bean
@@ -34,4 +34,10 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 		super.addResourceHandlers(registry);
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 	}
+
+	/*@Override
+	public void addViewControllers(ViewControllerRegistry registry) {
+		registry.addViewController("/index").setViewName("index");
+		registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
+	}*/
 }

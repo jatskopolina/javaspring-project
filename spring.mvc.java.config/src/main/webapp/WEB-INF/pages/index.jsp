@@ -1,4 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=US-ASCII"
+	pageEncoding="US-ASCII"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,17 +13,17 @@
 <title>log in</title>
 </head>
 <body>
-	<!-- <%!//public String[] array = CookieUtils.hasIt(request);%> after it i wanna autofill the form-->
+<!-- optional annotation checks if request param exists -->
 	<div id="ENTER">
 		<div class="form_window">
 			<img src="images/close.png">
 			<form action="hello" method="post">
 				<p>Log in, please</p>
 				<p>
-					Name: <input type="text" name="name">
+					Name: <input type="text" name="name" value="${userName}">
 				</p>
 				<p>
-					Password: <input type="password" name="password">
+					Password: <input type="password" name="password" value="${userPassword}">
 				</p>
 				<!-- i need it only for avoiding exception, because hello page wants remember parameter from request-->
 				<input type="hidden" name="remember" value="false">
