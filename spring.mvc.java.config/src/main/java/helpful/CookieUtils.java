@@ -1,4 +1,4 @@
-package cubearticle.examples.springmvc.helpful;
+package helpful;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -40,15 +40,19 @@ public class CookieUtils {
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null && cookies.length > 0) {
 			String lastLoginDatetime = null;
+			String userName = null;
 			for (int i = 0; i < cookies.length; i++) {
 				if (cookies[i].getName().equals("lastLoginDatetime")) {
 					lastLoginDatetime = cookies[i].getValue();
 				}
+				if (cookies[i].getName().equals("userName")) {
+					userName = cookies[i].getValue();
+				}
 			}
-			if (lastLoginDatetime != null) {
+			if (lastLoginDatetime != null && userName != null && userName.equals(request.getParameter("name"))) {
+				out.println(
+						"Hello, " + userName + "! Your last login date and time is: " + lastLoginDatetime + "<br/>");
 				found = true;
-				out.println("Hello, we are glad to see you!<br/>");
-				out.println("Your last login date and time is: " + lastLoginDatetime + "<br/>");
 			}
 		}
 

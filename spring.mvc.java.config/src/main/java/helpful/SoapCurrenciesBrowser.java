@@ -1,4 +1,4 @@
-package cubearticle.examples.springmvc.helpful;
+package helpful;
 
 import javax.xml.soap.SOAPConnectionFactory;
 import javax.xml.soap.SOAPConnection;

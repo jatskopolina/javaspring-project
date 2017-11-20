@@ -1,11 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
 	pageEncoding="US-ASCII"%>
-<%@ page import="cubearticle.examples.springmvc.helpful.CookieUtils"%>
+<%@ page import="helpful.CookieUtils"%>
 
-<%@ page import="cubearticle.examples.springmvc.helpful.SoapPrinter"%>
-
-<%@ page import="cubearticle.examples.springmvc.helpful.Currency"%>
+<%@ page import="helpful.Currency"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -27,22 +25,32 @@
 		Welcome,
 		<c:out value="${name}" />
 	</p>
-	<%
-		//here i had an awful mistake: if my checkbox isnt ticked, i have an exception here -
-		// he is not even in request
-		if (request.getParameter("remember").equals("true")) {
-			CookieUtils.demoUserCookie(request, response, out);
-			System.out.println("I was asked to remember that new user");
-		}
 
-		//i couldn`t get my list of valutes here.. so i use special class))
-		//I comment it while do testing, but this line is ok
-		SoapPrinter.print(out);
-	%>
-	<!-- stringBuilder for string changing: when u use string it creaates new one for each modification, but strbuilder doesnt. StringBuffer for multithread (it is slow and safe) -->
-	<c:forEach var="i" items="${list}">
-	${i.name}
-	</c:forEach>
+	<!-- //here i had an awful mistake: if my checkbox isnt ticked, i have an
+	exception here - he is not even in request -->
 
+		<c:if test="${remember}" >
+			<%CookieUtils.demoUserCookie(request, response, out);
+				System.out.println("I was asked to remember that newuser");%>
+		</c:if>
+
+	<!-- stringBuilder for string changing: when u use string it creates new one for each modification,
+	 but strbuilder doesnt. StringBuffer for multithread (it is slow and safe) -->
+	<table class='table table-striped table-sm table-bordered'>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>CharCode</th>
+				<th>NumCode</th>
+			</tr>
+		</thead>
+		<c:forEach var="i" items="${list}">
+			<tr>
+				<td>${i.name}</td>
+				<td>${i.charCode}</td>
+				<td>${i.numCode}</td>
+			</tr>
+		</c:forEach>
+	</table>
 </body>
 </html>

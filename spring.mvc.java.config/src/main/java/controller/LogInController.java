@@ -1,4 +1,4 @@
-package cubearticle.examples.springmvc.controller;
+package controller;
 
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import cubearticle.examples.springmvc.helpful.Currency;
-import cubearticle.examples.springmvc.helpful.DBConnector;
-import cubearticle.examples.springmvc.helpful.PasswordHasher;
+import helpful.Currency;
+import helpful.DBConnector;
+import helpful.PasswordHasher;
+import helpful.SoapCurrenciesBrowser;
 
 @Controller
 public class LogInController {
@@ -27,15 +28,16 @@ public class LogInController {
 		if (res.equals(password)) {
 			System.out.println("IT s ok, you successfully have logged in");
 			model.addAttribute("name", name);
-			ArrayList <Currency> a = new ArrayList<>();
-			Currency tmp = new Currency("Rubles", "RUB", "12e");
-			a.add(tmp);
-			model.addAttribute("list", a);
+			SoapCurrenciesBrowser browser = new SoapCurrenciesBrowser();
+			ArrayList<Currency> list = browser.getresult();
+			model.addAttribute("list", list);
+			model.addAttribute("remember", connector.remember(name));
 			return "hello";
 		} else {
 			System.out.println("OH, smth wrong!");
 			return "index";
 		}
+		// наследование спп: одинаковые методы родителей?
 	}
 
 }

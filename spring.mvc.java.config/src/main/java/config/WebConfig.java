@@ -1,4 +1,4 @@
-package cubearticle.examples.springmvc.config;
+package config;
 
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configurable
 @EnableWebMvc
-@ComponentScan(basePackages = "cubearticle.examples.springmvc.controller")
+@ComponentScan(basePackages = "controller")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
 	@Bean

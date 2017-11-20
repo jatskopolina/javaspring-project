@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>cubearticle.examples</groupId>
-	<artifactId>spring.mvc.java.config</artifactId>
+	<groupId>polina</groupId>
+	<artifactId>myproject</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring.mvc.java.config Maven Webapp</name>
+	<name>MyProject Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -46,6 +46,6 @@
 
 	</dependencies>
 	<build>
-		<finalName>spring.mvc.java.config</finalName>
+		<finalName>MyProject</finalName>
 	</build>
 </project>

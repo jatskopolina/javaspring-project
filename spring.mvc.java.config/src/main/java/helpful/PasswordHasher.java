@@ -1,4 +1,4 @@
-package cubearticle.examples.springmvc.helpful;
+package helpful;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;

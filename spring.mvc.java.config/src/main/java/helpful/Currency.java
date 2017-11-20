@@ -1,4 +1,4 @@
-package cubearticle.examples.springmvc.helpful;
+package helpful;
 
 public class Currency {// Валюта
 	private String name, CharCode, NumCode;

@@ -1,10 +1,10 @@
-package cubearticle.examples.springmvc.helpful;
+package helpful;
 
 import java.util.ArrayList;
 
 public class SoapParser {
 
-	public ArrayList<Currency> result = new ArrayList<Currency>();
+	private ArrayList<Currency> result = new ArrayList<Currency>();
 
 	SoapParser(String request) {
 		String arr[] = request.split("<EnumValutes>");

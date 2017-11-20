@@ -7,7 +7,7 @@
 <link href="<c:url value="/resources/styles_for_login.css" />"
 	rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<%@ page import="cubearticle.examples.springmvc.helpful.CookieUtils"%>
+<%@ page import="helpful.CookieUtils"%>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="resources/CheckingRegInfo.js"></script>
 <title>log in</title>
